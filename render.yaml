@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: stock-market-intelligence
+    env: python
+    buildCommand: pip install -r requirements.txt && python data/fetch_data.py && python notebooks/01_eda.py && python notebooks/04_portfolio_risk.py
+    startCommand: python dashboard/app.py
+    plan: free
